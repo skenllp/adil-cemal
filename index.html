@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adil & Cemal – Wedding Reception</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adil & Cemal – Wedding Reception">
+<meta property="og:description" content="Join us in celebrating our wedding reception on 29 December 2026">
+<meta property="og:image" content="https://YOUR-DOMAIN.vercel.app/assets/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<audio id="bgm" src="assets/music.mp3" loop preload="auto"></audio>
+
+<button id="music-toggle" aria-label="Toggle music" title="Toggle music">
+  <svg id="music-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+  <svg id="music-icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+</button>
+
+<section id="cover">
+  <p class="small">Adil &amp; Cemal</p>
+  <h1 class="script">are getting married!</h1>
+  <button id="envelope" aria-label="Open invitation">
+    <svg class="envelope-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="envBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c9956b"/>
+          <stop offset="100%" stop-color="#8b5e3c"/>
+        </linearGradient>
+        <linearGradient id="envFlap" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a97553"/>
+          <stop offset="100%" stop-color="#b8845e"/>
+        </linearGradient>
+        <radialGradient id="sealGrad" cx="50%" cy="45%" r="50%">
+          <stop offset="0%" stop-color="#e8c06a"/>
+          <stop offset="60%" stop-color="#c5a15a"/>
+          <stop offset="100%" stop-color="#8b6914"/>
+        </radialGradient>
+        <filter id="sealShadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.4"/></filter>
+      </defs>
+      <rect x="20" y="80" width="360" height="210" rx="8" fill="url(#envBody)" stroke="#6d3f24" stroke-width="1"/>
+      <line x1="20" y1="80" x2="200" y2="200" stroke="#7a4d30" stroke-width="0.5" opacity="0.5"/>
+      <line x1="380" y1="80" x2="200" y2="200" stroke="#7a4d30" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="20,80 200,200 380,80" fill="url(#envFlap)" stroke="#6d3f24" stroke-width="1"/>
+      <circle cx="200" cy="140" r="34" fill="url(#sealGrad)" filter="url(#sealShadow)" stroke="#8b6914" stroke-width="1.5"/>
+      <circle cx="200" cy="140" r="28" fill="none" stroke="#f6efe4" stroke-width="0.8" opacity="0.4"/>
+      <text x="200" y="146" text-anchor="middle" font-family="'Playfair Display',serif" font-style="italic" font-size="20" fill="#4a2f1f">A&amp;C</text>
+    </svg>
+  </button>
+  <p class="small">Click envelope to open</p>
+</section>
+
+<main id="site" hidden>
+  <section class="hero" style="background-image:url('assets/img.jpeg')">
+    <div class="hero-overlay"></div>
+    <p class="small">Wedding Reception</p>
+    <h1 class="script big">Adil</h1><p class="amp">&amp;</p><h1 class="script big">Cemal</h1>
+    <p class="meta">Tuesday, 29 December 2026 · 6 to 9 PM<br>Chakkolas Pavilion, Kalamassery, Kochi</p>
+  </section>
+
+  <section class="paper">
+    <div class="photo"><img src="assets/img.jpeg" alt="Adil and Cemal" loading="lazy"></div>
+    <p class="note">With hearts full of joy, we invite you and your family to celebrate our wedding reception. Your presence will make our evening complete, and we can’t wait to share it with you.</p>
+    <p class="note">With Love,<br>Adil Saleel &amp; Cemal Zuhra</p>
+    <p class="label">Reception</p>
+    <p class="note">Tuesday, 29 December 2026<br>6:00 PM – 9:00 PM</p>
+    <h2 class="script">Counting Down to Forever</h2>
+    <div class="count">
+      <div><b id="d">--</b><span>Days</span></div><i>:</i>
+      <div><b id="h">--</b><span>Hours</span></div><i>:</i>
+      <div><b id="m">--</b><span>Minutes</span></div><i>:</i>
+      <div><b id="s">--</b><span>Seconds</span></div>
+    </div>
+  </section>
+
+  <section class="dark info">
+    <h2 class="caps">Reception Info</h2>
+    <p class="label">The reception will take place on:</p>
+    <div class="date"><div>6:00 PM<br>TUESDAY</div><strong>29</strong><div>DECEMBER<br>2026</div></div>
+    <p class="label">Time</p><p class="time">6:00 PM – 9:00 PM</p>
+    <p class="label">Countdown</p><p id="line"></p>
+    <div class="cal" id="cal"><h3 class="script">December 2026</h3><div class="grid" id="grid"></div></div>
+    <button class="btn light" id="addcal">Add to Calendar</button>
+  </section>
+
+  <section class="beige">
+    <h2 class="script">Gallery</h2>
+    <img class="wide" src="assets/img2.jpeg" alt="Gallery" loading="lazy">
+  </section>
+
+  <section class="dark">
+    <h2 class="script left">Our Families</h2>
+    <div class="card">
+      <h3 class="script">Adil Saleel</h3><hr>
+      <p>S/o Dr Saleel V A<br>Dr Anisha Saleel</p>
+      <p>Valiyaveettil<br>Kaloor, Kochi</p>
+      <p>G/s/o:<br>(Late) Abdul Kalam<br>(Late) Beevikunji</p>
+      <p>Koyakutty (Retd Ex Engr PWD)<br>Jameela Beevi (Retd Sr Supt KSEB)</p>
+    </div>
+    <div class="card">
+      <h3 class="script">Cemal Zuhra</h3><hr>
+      <p>D/o Fazal Rahman<br>Rafeeda Fazal</p>
+      <p>“Greens”<br>Moozhikkal, Kozhikode</p>
+      <p>G/d/o:<br>Areekal Moosa Haji<br>Zuhara</p>
+      <p>(Late) Kunhabdullah Haji<br>Aysha</p>
+    </div>
+  </section>
+
+  <section class="beige">
+    <h2 class="caps">Dress Code</h2>
+    <div class="swatches">
+      <div><i style="background:#f6efe4"></i>Ivory</div>
+      <div><i style="background:#ead9c0"></i>Beige</div>
+      <div><i style="background:#d3b89d"></i>Warm Taupe</div>
+      <div><i style="background:#c9a35f"></i>Soft Gold</div>
+      <div><i style="background:#e2dbd0"></i>Soft Greige</div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <h2 class="script">The Venue</h2>
+    <div class="frame"><img src="assets/map.png" alt="Venue map" onerror="this.parentNode.style.display='none'"></div>
+    <h3 class="caps venue">Chakkolas Pavilion</h3>
+    <p class="it">Kalamassery, Kochi</p>
+    <a class="btn outline" target="_blank" rel="noopener" href="https://maps.app.goo.gl/6yqao3zvQnR3QBE76?g_st=iw">View Location</a>
+  </section>
+
+  <section class="dark wish">
+    <div class="card form">
+      <h3 class="caps">Wishes Box</h3>
+      <input id="wn" placeholder="Enter your name*" maxlength="60">
+      <textarea id="wm" placeholder="Enter your wishes*" maxlength="400"></textarea>
+      <button class="btn solid" id="send">Send Wishes</button>
+      <div id="wishes"></div>
+    </div>
+  </section>
+
+  <footer class="dark foot">
+    <p class="small">With love,</p>
+    <h2 class="script">Adil &amp; Cemal</h2>
+    <p class="small">Wedding Reception</p>
+    <p class="gold">29 December 2026</p>
+    <p class="it">With Love and Blessings from Our Beloved<br>Families &amp; Friends</p>
+    <p class="it">With best compliments<br>Aman Saleel · +91 80783 36078</p>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
