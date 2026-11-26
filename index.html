@@ -7,64 +7,36 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Adil & Cemal – Wedding Reception">
 <meta property="og:description" content="Join us in celebrating our wedding reception on 29 December 2026">
-<meta property="og:image" content="https://adil-saleel-cemal.vercel.app/og.jpg">
+<meta property="og:image" content="https://YOUR-DOMAIN.vercel.app/assets/cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-small.jpg" media="(max-width:559px)">
+<link rel="preload" as="image" href="assets/hero.jpg" media="(min-width:560px)">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
-<audio id="bgm" src="assets/music.mp3" loop preload="auto"></audio>
-
-<button id="music-toggle" aria-label="Toggle music" title="Toggle music">
-  <svg id="music-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
-  <svg id="music-icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-</button>
+<audio id="bgm" src="assets/audio.mp3" loop preload="auto"></audio>
 
 <section id="cover">
   <p class="small">Adil &amp; Cemal</p>
   <h1 class="script">are getting married!</h1>
   <button id="envelope" aria-label="Open invitation">
-    <svg class="envelope-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="envBody" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#c9956b"/>
-          <stop offset="100%" stop-color="#8b5e3c"/>
-        </linearGradient>
-        <linearGradient id="envFlap" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#a97553"/>
-          <stop offset="100%" stop-color="#b8845e"/>
-        </linearGradient>
-        <radialGradient id="sealGrad" cx="50%" cy="45%" r="50%">
-          <stop offset="0%" stop-color="#e8c06a"/>
-          <stop offset="60%" stop-color="#c5a15a"/>
-          <stop offset="100%" stop-color="#8b6914"/>
-        </radialGradient>
-        <filter id="sealShadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.4"/></filter>
-      </defs>
-      <rect x="20" y="80" width="360" height="210" rx="8" fill="url(#envBody)" stroke="#6d3f24" stroke-width="1"/>
-      <line x1="20" y1="80" x2="200" y2="200" stroke="#7a4d30" stroke-width="0.5" opacity="0.5"/>
-      <line x1="380" y1="80" x2="200" y2="200" stroke="#7a4d30" stroke-width="0.5" opacity="0.5"/>
-      <polygon points="20,80 200,200 380,80" fill="url(#envFlap)" stroke="#6d3f24" stroke-width="1"/>
-      <circle cx="200" cy="140" r="34" fill="url(#sealGrad)" filter="url(#sealShadow)" stroke="#8b6914" stroke-width="1.5"/>
-      <circle cx="200" cy="140" r="28" fill="none" stroke="#f6efe4" stroke-width="0.8" opacity="0.4"/>
-      <text x="200" y="146" text-anchor="middle" font-family="'Playfair Display',serif" font-style="italic" font-size="20" fill="#4a2f1f">A&amp;C</text>
-    </svg>
+    <span class="flap"></span><span class="seal">A&amp;C</span>
   </button>
   <p class="small">Click envelope to open</p>
 </section>
 
 <main id="site" hidden>
-  <section class="hero" style="background-image:url('assets/img.jpeg')">
-    <div class="hero-overlay"></div>
+  <section class="hero">
     <p class="small">Wedding Reception</p>
     <h1 class="script big">Adil</h1><p class="amp">&amp;</p><h1 class="script big">Cemal</h1>
     <p class="meta">Tuesday, 29 December 2026 · 6 to 9 PM<br>Chakkolas Pavilion, Kalamassery, Kochi</p>
   </section>
 
   <section class="paper">
-    <div class="photo"><img src="assets/img.jpeg" alt="Adil and Cemal" loading="lazy"></div>
+    <div class="photo"><img src="assets/couple.jpg" alt="Adil and Cemal" onerror="this.parentNode.style.display='none'"></div>
     <p class="note">With hearts full of joy, we invite you and your family to celebrate our wedding reception. Your presence will make our evening complete, and we can’t wait to share it with you.</p>
     <p class="note">With Love,<br>Adil Saleel &amp; Cemal Zuhra</p>
     <p class="label">Reception</p>
@@ -90,7 +62,7 @@
 
   <section class="beige">
     <h2 class="script">Gallery</h2>
-    <img class="wide" src="assets/img2.jpeg" alt="Gallery" loading="lazy">
+    <img class="wide" src="assets/gallery.jpg" alt="Gallery" onerror="this.style.display='none'">
   </section>
 
   <section class="dark">
@@ -111,7 +83,7 @@
     </div>
   </section>
 
-  <section class="beige">
+  <!-- <section class="beige">
     <h2 class="caps">Dress Code</h2>
     <div class="swatches">
       <div><i style="background:#f6efe4"></i>Ivory</div>
@@ -120,7 +92,7 @@
       <div><i style="background:#c9a35f"></i>Soft Gold</div>
       <div><i style="background:#e2dbd0"></i>Soft Greige</div>
     </div>
-  </section>
+  </section> -->
 
   <section class="dark">
     <h2 class="script">The Venue</h2>

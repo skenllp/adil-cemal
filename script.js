@@ -1,23 +1,10 @@
 (function(){
 var EVENT=new Date('2026-12-29T18:00:00+05:30'),END=new Date('2026-12-29T21:00:00+05:30');
 var $=function(i){return document.getElementById(i)};
-var bgm=$('bgm');
-var musicPlaying=false;
-function updateMusicIcon(){
-  $('music-icon-play').style.display=musicPlaying?'none':'block';
-  $('music-icon-pause').style.display=musicPlaying?'block':'none';
-}
-$('music-toggle').onclick=function(){
-  if(musicPlaying){bgm.pause();musicPlaying=false}
-  else{bgm.volume=.6;bgm.play().catch(function(){});musicPlaying=true}
-  updateMusicIcon();
-};
-document.addEventListener('visibilitychange',function(){if(document.hidden)bgm.pause()});
-window.addEventListener('beforeunload',function(){bgm.pause()});
 // envelope -> site
 $('envelope').onclick=function(){
   document.getElementById('cover').classList.add('opening');
-  bgm.volume=.6;bgm.play().catch(function(){});musicPlaying=true;updateMusicIcon();
+  var a=$('bgm');a.volume=.6;a.play().catch(function(){});
   $('site').hidden=false;
   setTimeout(function(){$('cover').classList.add('gone');document.body.classList.remove('locked')},900);
 };
