@@ -53,6 +53,12 @@ h2.script{font-size:2.2rem;margin-bottom:1.5rem}h2.caps{font-size:1.5rem;margin-
 .outline{border:1px solid var(--gold);color:var(--beige);border-radius:0;margin-top:1.4rem}.outline:hover{background:var(--gold);color:var(--brown)}
 .solid{background:var(--brown);color:var(--beige);border-radius:30px;float:right}
 .wide{max-width:min(600px,100%);height:auto;border-radius:6px}
+#moments .label{margin-top:0;color:#8a6d4f}
+#moments h2.script{margin-top:.3rem}
+.gallery{display:grid;grid-template-columns:1fr;gap:1.4rem;max-width:760px;margin:0 auto;justify-items:center}
+@media(min-width:720px){.gallery{grid-template-columns:1fr 1fr;align-items:start}}
+.shot{margin:0;width:100%;max-width:360px;padding:12px;border:1px solid #d8c6a8;background:var(--ivory);box-shadow:0 10px 28px #0002}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%}
 .card{background:var(--beige);color:var(--brown);border-radius:28px;max-width:600px;margin:0 auto 2rem;padding:2.4rem 1.6rem;box-shadow:0 14px 34px #0004}
 .card h3.script{font-size:2rem;color:var(--brown)}.card hr{border:0;border-top:1px solid var(--gold);width:60px;margin:.8rem auto 1.2rem}
 .card p{font-style:italic;margin-bottom:1rem;line-height:1.55}
