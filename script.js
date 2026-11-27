@@ -4,9 +4,17 @@ var $=function(i){return document.getElementById(i)};
 // envelope -> site
 $('envelope').onclick=function(){
   document.getElementById('cover').classList.add('opening');
-  var a=$('bgm');a.volume=.6;a.play().catch(function(){});
+  var a=$('bgm');
+  a.volume=.6;
+  if(a.paused)a.currentTime=0;
+  function play(){a.play().catch(function(){})}
+  play();
   $('site').hidden=false;
-  setTimeout(function(){$('cover').classList.add('gone');document.body.classList.remove('locked')},900);
+  setTimeout(function(){
+    $('cover').classList.add('gone');
+    document.body.classList.remove('locked');
+    if(a.paused)play();
+  },900);
 };
 // countdown
 function tick(){
